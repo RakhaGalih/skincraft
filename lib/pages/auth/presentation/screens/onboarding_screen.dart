@@ -4,6 +4,7 @@ import 'package:skincraft/core/theme/app_colors.dart';
 import 'package:skincraft/core/theme/app_sizes.dart';
 import 'package:skincraft/core/theme/app_typography.dart';
 import 'package:skincraft/pages/auth/models/onboarding_model.dart';
+import 'package:skincraft/pages/auth/presentation/screens/login_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   static const route = '/onboarding';
@@ -19,13 +20,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final List<OnboardingModel> _onboardingData = [
     OnboardingModel(
       title: 'Kenali Kulitmu, Dapatkan Perawatan Terbaik!',
-      description:
-          'Temukan skincare yang cocok berdasarkan komposisi bahan.',
+      description: 'Temukan skincare yang cocok berdasarkan komposisi bahan.',
       image: 'assets/images/serum.jpg',
     ),
     OnboardingModel(
-      title:
-          'Diskusikan dan berbagi pengalaman dengan pengguna lain.',
+      title: 'Diskusikan dan berbagi pengalaman dengan pengguna lain.',
       description:
           'Jelajahi jenis kulitmu, pahami kebutuhannya, dan dapatkan saran dari komunitas.',
       image: 'assets/images/lotion.jpg',
@@ -130,6 +129,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextButton(
                 onPressed: () {
+                  Navigator.pushNamed(context, LoginScreen.route);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -217,6 +217,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             ],
                           ),
                           onPressed: () {
+                            Navigator.pushNamed(context, LoginScreen.route);
                           },
                         )),
                       ],

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:skincraft/core/theme/app_colors.dart';
 import 'package:skincraft/pages/dashboard/home/models/provider_model.dart';
-import 'package:skincraft/pages/dashboard/home/presentation/screens/home_patient_screen.dart';
+import 'package:skincraft/pages/dashboard/home/presentation/screens/home_screen.dart';
+import 'package:skincraft/pages/dashboard/home/presentation/screens/product_screen.dart';
+import 'package:skincraft/pages/dashboard/home/presentation/screens/profile_screen.dart';
 
 class NavbarPatientScreen extends StatelessWidget {
   static const route = '/navbarPasien';
@@ -14,8 +16,9 @@ class NavbarPatientScreen extends StatelessWidget {
         create: (context) => ProviderModel(),
         child: Consumer<ProviderModel>(builder: (context, data, child) {
           List<Widget> widgetOptions = <Widget>[
-            const HomePatientScreen(),
-             const HomePatientScreen(),
+            const HomeScreen(),
+            const ProductScreen(),
+            const ProfileScreen(),
           ];
           return Scaffold(
             body: widgetOptions[data.selectedNavBar],
@@ -24,6 +27,10 @@ class NavbarPatientScreen extends StatelessWidget {
                 BottomNavigationBarItem(
                   icon: Icon(Icons.home),
                   label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.search),
+                  label: 'Produk',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.person),

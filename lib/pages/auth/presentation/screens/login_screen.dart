@@ -6,7 +6,6 @@ import 'package:skincraft/core/theme/app_sizes.dart';
 import 'package:skincraft/core/theme/app_typography.dart';
 import 'package:skincraft/pages/dashboard/navbar_patient_screen.dart';
 
-
 class LoginScreen extends StatefulWidget {
   static const route = '/login';
   const LoginScreen({super.key});
@@ -32,8 +31,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: Image.asset(
-                      'assets/images/loginImage.jpeg',
+                      'assets/images/skincare.jpg',
                       height: context.as.appWidth - 60,
+                      width: context.as.appWidth - 60,
                       fit: BoxFit.cover,
                     )),
                 const SizedBox(
@@ -101,30 +101,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 12,
                 ),
-                RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                        style: AppTypograph.label2.regular
-                            .copyWith(color: AppColor.blackColor),
-                        children: [
-                          const TextSpan(
-                              text:
-                                  'Email harus mengandung salah satu dari domain berikut:'),
-                          TextSpan(
-                              text: '@pasien.myskin.ac.id ',
-                              style: AppTypograph.label2.regular
-                                  .copyWith(color: AppColor.blueColor)),
-                          const TextSpan(
-                              text: 'untuk Login sebagai pasien, atau '),
-                          TextSpan(
-                              text: '@dokter.myskin.ac.id ',
-                              style: AppTypograph.label2.regular
-                                  .copyWith(color: AppColor.blueColor)),
-                          const TextSpan(text: 'untuk Login sebagai dokter.')
-                        ])),
-                const SizedBox(
-                  height: 12,
-                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -140,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Text(
                         'Klik di sini untuk daftar',
                         style: AppTypograph.label2.bold
-                            .copyWith(color: AppColor.blueColor),
+                            .copyWith(color: AppColor.primaryColor),
                       ),
                     )
                   ],
