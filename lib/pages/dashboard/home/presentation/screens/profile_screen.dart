@@ -84,44 +84,42 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         children: List.generate(skinTypes.length, (index) {
                       return Padding(
                         padding: const EdgeInsets.only(left: 8),
-                        child: BorderCard(
-                          child: Column(
-                            children: [
-                              Container(
-                                width: 132,
-                                padding: EdgeInsets.symmetric(
-                                  vertical: context.as.padding,
-                                ),
-                                decoration: const BoxDecoration(
-                                  color: AppColor.primaryColor,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    topRight: Radius.circular(10),
-                                  ),
-                                ),
-                                child: Text(skinTypes[index].title,
-                                    textAlign: TextAlign.center,
-                                    style: AppTypograph.label1.bold),
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 132,
+                              padding: EdgeInsets.symmetric(
+                                vertical: context.as.padding,
                               ),
-                              
-                              Container(
-                                width: 132,
-                                padding: EdgeInsets.symmetric(
-                                  vertical: context.as.padding,
+                              decoration: const BoxDecoration(
+                                color: AppColor.primaryColor,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
                                 ),
-                                decoration: BoxDecoration(
-                                  color: AppColor.primaryColor.withOpacity(0.6),
-                                  borderRadius: const BorderRadius.only(
-                                    bottomLeft: Radius.circular(10),
-                                    bottomRight: Radius.circular(10),
-                                  ),
-                                ),
-                                child: Text(skinTypes[index].value,
-                                    textAlign: TextAlign.center,
-                                    style: AppTypograph.label2.medium),
                               ),
-                            ],
-                          ),
+                              child: Text(skinTypes[index].title,
+                                  textAlign: TextAlign.center,
+                                  style: AppTypograph.label1.bold),
+                            ),
+                            
+                            Container(
+                              width: 132,
+                              padding: EdgeInsets.symmetric(
+                                vertical: context.as.padding,
+                              ),
+                              decoration: BoxDecoration(
+                                color: AppColor.primaryColor.withOpacity(0.6),
+                                borderRadius: const BorderRadius.only(
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10),
+                                ),
+                              ),
+                              child: Text(skinTypes[index].value,
+                                  textAlign: TextAlign.center,
+                                  style: AppTypograph.label2.medium),
+                            ),
+                          ],
                         ),
                       );
                     }))),
